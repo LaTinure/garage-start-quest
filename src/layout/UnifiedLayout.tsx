@@ -30,16 +30,22 @@ const UnifiedLayout: React.FC<UnifiedLayoutProps> = ({
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {showHeader && isAuthenticated && <Header />}
+      {/* Header fixe unifié en haut */}
+      {showHeader && isAuthenticated && (
+        <Header />
+      )}
       
-
-      <main className="flex-1 p-6">
-        <div className="max-w-7xl mx-auto">
+      {/* Contenu principal avec padding approprié */}
+      <main className="flex-1 main-content">
+        <div className="max-w-7xl mx-auto p-6">
           {children}
         </div>
       </main>
 
-      {showFooter && isAuthenticated && <Footer />}
+      {/* Footer statique en bas */}
+      {showFooter && isAuthenticated && (
+        <Footer />
+      )}
     </div>
   );
 };
