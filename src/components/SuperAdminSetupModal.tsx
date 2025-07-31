@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -191,7 +191,6 @@ const SuperAdminSetupModal: React.FC<SuperAdminSetupModalProps> = ({
     <Dialog open={isOpen} onOpenChange={() => {}}>
       <DialogContent
         className="sm:max-w-md max-h-[90vh] overflow-y-auto bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 border-green-200 dark:border-green-700"
-        aria-describedby="super-admin-description"
       >
         <DialogHeader className="text-center">
           <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center animate-pulse">
@@ -200,9 +199,9 @@ const SuperAdminSetupModal: React.FC<SuperAdminSetupModalProps> = ({
           <DialogTitle className="text-2xl font-bold text-green-800 dark:text-green-200">
             Configuration Super-Admin
           </DialogTitle>
-          <p id="super-admin-description" className="text-green-600 dark:text-green-300 mt-2">
+          <DialogDescription className="text-green-600 dark:text-green-300 mt-2">
             Créez le compte administrateur principal pour gérer toutes les organisations
-          </p>
+          </DialogDescription>
         </DialogHeader>
 
         <Card className="border-green-200 dark:border-green-700 bg-white/50 dark:bg-green-900/50 backdrop-blur-sm">
