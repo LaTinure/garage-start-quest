@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
 import { useSimpleAuth } from '@/hooks/useSimpleAuth';
 
 interface UnifiedLayoutProps {
@@ -29,20 +28,22 @@ const UnifiedLayout: React.FC<UnifiedLayoutProps> = ({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header fixe unifié en haut */}
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex flex-col">
+      {/* Header fixe en haut - UN SEUL */}
       {showHeader && isAuthenticated && (
         <Header />
       )}
       
-      {/* Contenu principal avec padding approprié */}
-      <main className="flex-1 main-content">
-        <div className="max-w-7xl mx-auto p-6">
-          {children}
+      {/* Contenu principal qui pousse le footer en bas */}
+      <main className="flex-1 w-full">
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          <div className="min-h-[calc(100vh-140px)]">
+            {children}
+          </div>
         </div>
       </main>
 
-      {/* Footer statique en bas */}
+      {/* Footer statique en bas - UN SEUL */}
       {showFooter && isAuthenticated && (
         <Footer />
       )}
